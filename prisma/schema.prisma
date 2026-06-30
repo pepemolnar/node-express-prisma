@@ -1,6 +1,7 @@
 generator client {
-  provider = "prisma-client" // prisma-client-js is deprecated in v7
-  output   = "../src/generated/prisma" // output is now REQUIRED
+  provider     = "prisma-client" // prisma-client-js is deprecated in v7
+  output       = "../src/generated/prisma" // output is now REQUIRED
+  moduleFormat = "cjs" // match the CommonJS project ("type": "commonjs")
 }
 
 datasource db {
