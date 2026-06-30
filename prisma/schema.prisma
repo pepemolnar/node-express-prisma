@@ -1,0 +1,17 @@
+generator client {
+  provider = "prisma-client" // prisma-client-js is deprecated in v7
+  output   = "../src/generated/prisma" // output is now REQUIRED
+}
+
+datasource db {
+  provider = "postgresql" // no `url` here anymore
+}
+
+model User {
+  id        String   @id @default(uuid())
+  name      String
+  email     String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  isDeleted Boolean  @default(false)
+}
